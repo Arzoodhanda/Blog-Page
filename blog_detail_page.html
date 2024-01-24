@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<title>blog detail page - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style type="text/css">
+.blog-listing {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.gray-bg {
+    background-color: #f5f5f5;
+}
+/* Blog 
+---------------------*/
+.blog-grid {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.blog-grid .blog-img {
+  position: relative;
+}
+.blog-grid .blog-img .date {
+  position: absolute;
+  background: #d64105;
+  color: #ffffff;
+  padding: 8px 15px;
+  left: 10px;
+  top: 10px;
+  border-radius: 4px;
+}
+.blog-grid .blog-img .date span {
+  font-size: 22px;
+  display: block;
+  line-height: 22px;
+  font-weight: 700;
+}
+.blog-grid .blog-img .date label {
+  font-size: 14px;
+  margin: 0;
+}
+.blog-grid .blog-info {
+  padding: 20px;
+}
+.blog-grid .blog-info h5 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.blog-grid .blog-info h5 a {
+  color: #20247b;
+}
+.blog-grid .blog-info p {
+  margin: 0;
+}
+.blog-grid .blog-info .btn-bar {
+  margin-top: 20px;
+}
+
+
+/* Blog Sidebar
+-------------------*/
+.blog-aside .widget {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+.blog-aside .widget-body {
+  padding: 15px;
+}
+.blog-aside .widget-title {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.blog-aside .widget-title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d64105;
+  margin: 0;
+}
+.blog-aside .widget-author .media {
+  margin-bottom: 15px;
+}
+.blog-aside .widget-author p {
+  font-size: 16px;
+  margin: 0;
+}
+.blog-aside .widget-author .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.blog-aside .widget-author h6 {
+  font-weight: 600;
+  color: #20247b;
+  font-size: 22px;
+  margin: 0;
+  padding-left: 20px;
+}
+.blog-aside .post-aside {
+  margin-bottom: 15px;
+}
+.blog-aside .post-aside .post-aside-title h5 {
+  margin: 0;
+}
+.blog-aside .post-aside .post-aside-title a {
+  font-size: 18px;
+  color: #20247b;
+  font-weight: 600;
+}
+.blog-aside .post-aside .post-aside-meta {
+  padding-bottom: 10px;
+}
+.blog-aside .post-aside .post-aside-meta a {
+  color: #6F8BA4;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+.blog-aside .latest-post-aside + .latest-post-aside {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+.blog-aside .latest-post-aside .lpa-right {
+  width: 90px;
+}
+.blog-aside .latest-post-aside .lpa-right img {
+  border-radius: 3px;
+}
+.blog-aside .latest-post-aside .lpa-left {
+  padding-right: 15px;
+}
+.blog-aside .latest-post-aside .lpa-title h5 {
+  margin: 0;
+  font-size: 15px;
+}
+.blog-aside .latest-post-aside .lpa-title a {
+  color: #20247b;
+  font-weight: 600;
+}
+.blog-aside .latest-post-aside .lpa-meta a {
+  color: #6F8BA4;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tag-cloud a {
+  padding: 4px 15px;
+  font-size: 13px;
+  color: #ffffff;
+  background: #20247b;
+  border-radius: 3px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.tag-cloud a:hover {
+  background: #d64105;
+}
+/*
+.blog-single {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}*/
+
+.article {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 15px;
+  margin: 15px 0 30px;
+}
+.article .article-title {
+  padding: 15px 0 20px;
+}
+.article .article-title h6 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.article .article-title h6 a {
+  text-transform: uppercase;
+  color: #d64105;
+  border-bottom: 1px solid #d64105;
+}
+.article .article-title h2 {
+  color: #20247b;
+  font-weight: 600;
+}
+
+@media (max-width:400px) {
+  .article .article-title h2 {
+  font-size: 30px;
+}
+
+}
+
+
+
+.article .article-title .media {
+  padding-top: 15px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 20px;
+}
+.article .article-title .media .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.article .article-title .media .media-body {
+  padding-left: 8px;
+}
+.article .article-title .media .media-body label {
+  font-weight: 600;
+  color: #d64105;
+  margin: 0;
+}
+.article .article-title .media .media-body span {
+  display: block;
+  font-size: 12px;
+}
+
+.article .article-content p{
+  text-align: justify;
+  font-size: 16px;
+}
+
+
+.article .article-content h1,
+.article .article-content h2,
+.article .article-content h3,
+.article .article-content h4,
+.article .article-content h5,
+.article .article-content h6 {
+  color: #20247b;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width:400px) {
+  .article .article-content h3 {
+  font-size: 30px;
+}
+
+}
+
+
+
+
+
+.article .article-content blockquote {
+  max-width: 600px;
+  padding: 15px 0 30px 0;
+  margin: 0;
+}
+.article .article-content blockquote p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #d64105;
+  margin: 0;
+}
+.article .article-content blockquote .blockquote-footer {
+  color: #20247b;
+  font-size: 16px;
+}
+.article .article-content blockquote .blockquote-footer cite {
+  font-weight: 600;
+}
+
+
+
+.article .article-content .item-travel{
+  font-size: 18px;
+  color: black;
+  line-height: 1.8rem;
+  margin-top: 10px;
+}
+.article .tag-cloud {
+  padding-top: 10px;
+}
+
+.article-comment {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 20px;
+}
+.article-comment h4 {
+  color: #20247b;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+/* Contact Us
+---------------------*/
+.contact-name {
+  margin-bottom: 30px;
+}
+.contact-name h5 {
+  font-size: 22px;
+  color: #20247b;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.contact-name p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.social-share a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  margin-right: 10px;
+}
+.social-share .dribbble {
+  box-shadow: 0 8px 30px -4px rgba(234, 76, 137, 0.5);
+  background-color: #ea4c89;
+}
+.social-share .behance {
+  box-shadow: 0 8px 30px -4px rgba(0, 103, 255, 0.5);
+  background-color: #0067ff;
+}
+.social-share .linkedin {
+  box-shadow: 0 8px 30px -4px rgba(1, 119, 172, 0.5);
+  background-color: #0177ac;
+}
+
+.contact-form .form-control {
+  border: none;
+  border-bottom: 1px solid #20247b;
+  background: transparent;
+  border-radius: 0;
+  padding-left: 0;
+  box-shadow: none !important;
+}
+.contact-form .form-control:focus {
+  border-bottom: 1px solid #fc5356;
+}
+.contact-form .form-control.invalid {
+  border-bottom: 1px solid #ff0000;
+}
+.contact-form .send {
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .contact-form .send {
+    margin-bottom: 20px;
+  }
+}
+
+.section-title h2 {
+    font-weight: 700;
+    color: #20247b;
+    font-size: 45px;
+    margin: 0 0 15px;
+    border-left: 5px solid #fc5356;
+    padding-left: 15px;
+}
+.section-title {
+    padding-bottom: 45px;
+}
+.contact-form .send {
+    margin-top: 20px;
+}
+.px-btn {
+    padding: 0 40px 0 20px;
+    line-height: 40px;
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    background-color: #d64105;
+    border: none;
+    border-radius: 5px;
+}
+/*.px-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid rgba(252, 83, 86, 0.6);
+    border-right: 1px solid transparent;
+    -moz-transition: ease all 0.35s;
+    -o-transition: ease all 0.35s;
+    -webkit-transition: ease all 0.35s;
+    transition: ease all 0.35s;
+    width: 60px;
+    height: 60px;
+}*/
+.px-btn .arrow {
+    width: 13px;
+    height: 2px;
+    background: currentColor;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 25px;
+}
+.px-btn .arrow:after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+.section_padding_130 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.faq_area {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #f1f1f1;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1rem 1rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+
+.faq-accordian .card .card-body p{
+  font-size: 16px;
+  text-align: justify;
+}
+
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}
+
+.blog_detail{
+  line-height: 40px;
+}
+
+.blog_detail .date{
+  font-size:16px;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+
+}
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="#">Logo
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Flight</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Car Hire</a>
+          </li>
+          
+        </ul>
+        <div class="d-flex contactwith right-header">
+            <a class="nav-link" href="https://www.getaflight.co.uk/deals/">Deals</a>
+            <img src="assests/getaflight-whatsapp-orange.svg" style= "width:25px; height:25px; margin-left: 20px;">
+            <img src="assests/getaflight-phone-orange.svg" style= "width:30px; height:30px; margin-left: 20px;">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a class="nav-link" href="tel:000 0000 0000" style="font-size: 20px;">000 0000 0000</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!--menu end-->
+
+
+<div class="container-fluid bgimg" style="background-image: url(assests/iStock-944990208-123.jpg);">
+  <div class="container blog_detail">
+    <span class="date">• 26 FEB 2024</span><br>
+    <span class="tag tag-red">World</span>
+    <span class="tag tag-red">Travel</span>
+    <span class="tag tag-red">Beach</span>
+
+    
+    <h1>7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</h1>
+    
+    
+    
+  </div>
+  
+  </div>
+
+
+
+
+
+<div class="blog-single gray-bg">
+<div class="container">
+<div class="row align-items-start">
+<div class="col-lg-8 m-15px-tb">
+<article class="article">
+<!--<div class="article-img">
+<img src="assests/iStock-518230906.jpg" title alt>
+</div>
+<div class="article-title">
+<h6><a href="#">World</a></h6>
+<h2>7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</h2>
+<div class="media">
+<div class="avatar">
+<img src="assests/pngtree-user-vector-avatar-png-image_1541962.jpg" title alt>
+</div>
+<div class="media-body">
+<label>Arzoo Dhanda</label>
+<span>26 FEB 2024</span>
+</div>
+</div>
+</div>-->
+<div class="article-content">
+<p>On turning the globe from one point to another, you can see various small piece of land having mesmerizing landscapes that opens the gateway to escape the world with outdoor adventure, relaxation, and exploration. From secluded tropical hideaways to vibrant cultural gems, each island on this planet boasts a unique tapestry of beauty, adventure, ambience, and serenity. </p>
+<p>In the article given below, we are highlighting the best islands of the world that you can explore. So, let’s take a look:</p>
+<img src="assests/iStock-518230906.jpg" title alt>
+<h3>1.Santorini:</h3>
+
+<p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+<p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+<p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+<!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+<div class="button-style">
+  <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+  
+</div>
+<img src="assests/iStock-518230906.jpg" title alt>
+<h3>1.Santorini:</h3>
+
+<p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+<p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+<p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+<!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+  <div class="button-style">
+    <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+    
+  </div>
+ 
+  <img src="assests/iStock-518230906.jpg" title alt>
+  <h3>1.Santorini:</h3>
+  
+  <p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+  <p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+  <p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+  <!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+  <div class="button-style">
+    <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+    
+  </div>
+  
+  <img src="assests/iStock-518230906.jpg" title alt>
+  <h3>1.Santorini:</h3>
+  
+  <p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+  <p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+  <p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+  <!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+  <div class="button-style">
+    <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+    
+  </div>
+  
+  <img src="assests/iStock-518230906.jpg" title alt>
+  <h3>1.Santorini:</h3>
+  
+  <p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+  <p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+  <p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+  <!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+  <div class="button-style">
+    <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+    
+  </div>
+  <img src="assests/iStock-518230906.jpg" title alt>
+  <h3>1.Santorini:</h3>
+  
+  <p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+  <p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+  <p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+  <!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+  <div class="button-style">
+    <a href="tel:"><button class="btn-blog">Book Flight Tickets to Santorini</button></a>
+    
+  </div>
+  
+  <img src="assests/iStock-518230906.jpg" title alt>
+  <h3>1.Santorini:</h3>
+  
+  <p>Located in the Aegean Sea, Santorini is the largest island that creates the southernmost member of the Cyclades group of islands. Being one of the best islands in the world, Santorini is well-known for several white-washed buildings with blue-domed churches that create a picturesque contrast with the sky. This architecture is a hallmark of the island’s charm. </p>
+  <p>Santorini’s location on the rim of a volcanic caldera offers stunning views of the sea, especially during sunsets from vantage points like Oia. Santorini in Greece is a well-known destination for couples and honeymoons as it offers a perfect and romantic ambience to its visitors with breathtaking sunsets, intimate settings, and luxurious accommodations. All these natural attraction makes this place a perfect romantic gateway to escape the regular hustle & bustle. Also, the island hosts several cultural events and festivals, offering an opportunity for visitors to immerse themselves in local traditions, music, and dance.</p>
+  <p>Santorini is the perfect destination or island for adventure seekers too as they can explore hiking trails, boat trips to volcanic islands, and water adventure. </p>
+  <!--
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p class="blockquote-footer">Someone famous in <cite title="Source Title">Dick Grayson</cite></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+  sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+
+
+
+<div class="nav tag-cloud">
+  <a href="#">Holidays</a>
+  <a href="#">Advanture</a>
+  <a href="#">Travel</a>
+  <a href="#">Beach</a>
+  <a href="#">Luxury</a>
+  <a href="#">Night Out</a>
+</div>
+</article>
+
+<div class="faq_area section_padding_130" id="faq">
+  <div class="container">
+  <div class="row justify-content-center">
+  <div class="col-12 col-sm-8 col-lg-10">
+  
+  <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+  <h3 style="font-size: 1.5rem;"><span>Frequently </span> Asked Questions</h3>
+  <p style="font-size: 16px;">Reflect and respond to your audience’s needs wholly and thoroughly.</p>
+  <div class="line"></div>
+  </div>
+  </div>
+  </div>
+  <div class="row justify-content-center">
+  
+  <div class="col-12 col-sm-10 col-lg-10">
+  <div class="accordion faq-accordian" id="faqAccordion">
+  <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+  <div class="card-header" id="headingOne">
+  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What islands are the best islands to spend vacations?<span class="lni-chevron-up"></span></h6>
+  </div>
+  <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+  <div class="card-body">
+  <p>If someone is planning for a perfect vacation then, some of the best islands that they can plan include Santorini (Greece), Palawan (Philippines), Seychelles (Indian Ocean), Mauritius (Indian Ocean), Kauai (Hawaii), Bali (Indian Ocean), and Jamaica (Caribbean).</p>
+  
+  </div>
+  </div>
+  </div>
+  <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+  <div class="card-header" id="headingTwo">
+  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Which Island is known as the Garden Isle?<span class="lni-chevron-up"></span></h6>
+  </div>
+  <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+  <div class="card-body">
+  <p>Kauai is well-known for its lush landscapes, mesmerizing coastline, outdoor adventures, amazing forests, and jungles. Thus, this island has been renamed as ‘Garden Isle’.</p>
+  
+  </div>
+  </div>
+  </div>
+  <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+  <div class="card-header" id="headingThree">
+  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Which beach of Mauritius is popular for adventure activities?<span class="lni-chevron-up"></span></h6>
+  </div>
+  <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+  <div class="card-body">
+  <p>Mauritius is the home of the best beaches for adventure in the world and some of them are Belle Mare, Trou aux Biches, Grand Baie, Le Morne, Blue Bay, Port Louis, Tamarin, Rodrigues, and Bel Ombre. Here visitors can perform water and outdoor activities like diving the western coast, hiking at Le Morne Brabant, snorkelling with Giant Turtles, swimming with wild dolphins, whale watching, and kayaking on the Tamarin River.</p>
+  </div>
+  </div>
+  </div>
+  <!--<div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+    <div class="card-header" id="headingFour">
+    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Which are the largest islands in the Philippines?<span class="lni-chevron-up"></span></h6>
+    </div>
+    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
+    <div class="card-body">
+    <p>There are 11 largest islands in the Philippines and they are Luzon, Mindanao, Samar, Negros, Palawan, Panay, Mindoro, Leyte, Cebu, Bohol, and Masbate.</p>
+    </div>
+    </div>
+    </div>-->
+  </div>
+  
+  <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+  <i class="lni-emoji-sad"></i>
+  <p class="mb-0 px-2">Can't find your answers?</p>
+  <a href="tel:020 7725 7000"> Contact us</a>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+<div class="contact-form article-comment">
+<h4>Leave a Reply</h4>
+
+<form id="contact-form" method="POST" action="details_entry.php">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+ 
+<input name="full_name" id="name" placeholder="Name *" class="form-control" type="text">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<input name="email" id="email" placeholder="Email *" class="form-control" type="email">
+</div>
+</div>
+<div class="col-md-12">
+<div class="form-group">
+<textarea name="message_send" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
+</div>
+</div>
+<div class="col-md-12">
+<div class="send">
+<button class="px-btn theme" name="save" type="submit"><span>Submit</span> <i class="arrow"></i></button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="col-lg-4 m-15px-tb blog-aside">
+
+  <div class="widget widget-author">
+  <div class="widget-title">
+  <h3>Author</h3>
+  </div>
+  <div class="widget-body">
+  <div class="media align-items-center">
+  <div class="avatar">
+  <img src="assests/pngtree-user-vector-avatar-png-image_1541962.jpg" title alt>
+  </div>
+  <div class="media-body">
+  <h6>Hello, I'm<br> Arzoo Dhanda</h6>
+  </div>
+  </div>
+  <p style="text-align: justify;">As a full stack developer, I architect and implement end-to-end solutions, seamlessly blending frontend and backend technologies to create robust, scalable, and user-centric web applications</p>
+  </div>
+  </div>
+  
+  <!--
+  <div class="widget widget-post">
+  <div class="widget-title">
+  <h3>Trending Now</h3>
+  </div>
+  <div class="widget-body">
+  </div>
+  </div>-->
+  
+  
+  
+  
+  
+  <div class="widget widget-latest-post">
+    <div class="widget-title">
+    <h3>Trending Now</h3>
+    </div>
+    <div class="widget-body">
+    <div class="latest-post-aside media">
+    <div class="lpa-left media-body">
+    <div class="lpa-title">
+    <h5>
+      <a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+    </div>
+    <div class="lpa-meta">
+    <a class="name" href="#">
+      Arzoo Dhanda
+    </a>
+    <a class="date" href="#">
+    26 FEB 2024
+    </a>
+    </div>
+    </div>
+    <div class="lpa-right">
+    <a href="#">
+    <img src="#" title alt>
+    </a>
+    </div>
+    </div>
+    <div class="latest-post-aside media">
+    <div class="lpa-left media-body">
+    <div class="lpa-title">
+    <h5>
+      <a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+    </div>
+    <div class="lpa-meta">
+    <a class="name" href="#">
+      Arzoo Dhanda
+    </a>
+    <a class="date" href="#">
+    26 FEB 2024
+    </a>
+    </div>
+    </div>
+    <div class="lpa-right">
+    <a href="#">
+    <img src="#" title alt>
+    </a>
+    </div>
+    </div>
+    <div class="latest-post-aside media">
+    <div class="lpa-left media-body">
+    <div class="lpa-title">
+    <h5>
+      <a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+    </div>
+    <div class="lpa-meta">
+    <a class="name" href="#">
+      Arzoo Dhanda
+    </a>
+    <a class="date" href="#">
+    26 FEB 2024
+    </a>
+    </div>
+    </div>
+    <div class="lpa-right">
+    <a href="#">
+    <img src="#" title alt>
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+  
+    
+  
+  
+  <div class="widget widget-latest-post">
+  <div class="widget-title">
+  <h3>Latest Post</h3>
+  </div>
+  <div class="widget-body">
+  <div class="latest-post-aside media">
+  <div class="lpa-left media-body">
+  <div class="lpa-title">
+  <h5><a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+  </div>
+  <div class="lpa-meta">
+  <a class="name" href="#">
+    Arzoo Dhanda
+  </a>
+  <a class="date" href="#">
+  26 FEB 2024
+  </a>
+  </div>
+  </div>
+  <div class="lpa-right">
+  <a href="#">
+  <img src="#" title alt>
+  </a>
+  </div>
+  </div>
+  <div class="latest-post-aside media">
+  <div class="lpa-left media-body">
+  <div class="lpa-title">
+  <h5><a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+  </div>
+  <div class="lpa-meta">
+  <a class="name" href="#">
+    Arzoo Dhanda
+  </a>
+  <a class="date" href="#">
+  26 FEB 2024
+  </a>
+  </div>
+  </div>
+  <div class="lpa-right">
+  <a href="#">
+  <img src="#" title alt>
+  </a>
+  </div>
+  </div>
+  <div class="latest-post-aside media">
+  <div class="lpa-left media-body">
+  <div class="lpa-title">
+  <h5><a href="#">7 Best Islands of the World: Unveiling the Paradise, Where Beauty Knows No Limit</a></h5>
+  </div>
+  <div class="lpa-meta">
+  <a class="name" href="#">
+    Arzoo Dhanda
+  </a>
+  <a class="date" href="#">
+  26 FEB 2024
+  </a>
+  </div>
+  </div>
+  <div class="lpa-right">
+  <a href="#">
+  <img src="#" title alt>
+  </a>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="widget widget-tags">
+  <div class="widget-title">
+  <h3>Latest Tags</h3>
+  </div>
+  <div class="widget-body">
+  <div class="nav tag-cloud">
+  <a href="#">Holidays</a>
+  <a href="#">Advanture</a>
+  <a href="#">Travel</a>
+  <a href="#">Beach</a>
+  <a href="#">Luxury</a>
+  <a href="#">Night Out</a>
+  <a href="#">World</a>
+  </div>
+  </div>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  </section>
+  
+
+<!--top fotter-->
+<div class="topheader">
+  <div class="container join">
+      <div class="travellers">
+          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+          <div id="offers_border" class="nbf_tpl_text offers_border"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec arcu dui. Sed porta odio massa. Mauris ornare diam vitae nisl dapibus facilisis. Morbi eleifend sagittis luctus.
+
+            Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+            
+            Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+          </p>
+      </div>
+      <div class="certificate">
+          <div class="atol">
+              <img src="#">
+              <h4>Lorem ipsum dolor</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+
+
+          </div>
+          <div class="atol">
+              <img src="#">
+              <h4>
+                Lorem ipsum dolor
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+
+          </div>
+          <div class="atol">
+              <img src="#">
+              <h4>
+                Lorem ipsum dolor
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+
+          </div>
+      </div>
+
+  </div>
+</div>
+
+  <!--top fotter end-->
+
+  <!--main footer-->
+  <div class="pagefooter">
+      
+      <div class="nevermiss">
+          <div class="newsletter">
+              <div class="receive">
+                  <div class="heading-sm">
+                      Never miss a deal!
+                  </div>
+                  <div class="latest">
+                      Receive our latest offers, trends & stories direct to your inbox.
+                  </div>
+
+              </div>
+              <div class="subscribe">
+                  <!--<input type="hidden" name="ajax" value="1" />
+                  <input type="hidden" name="source" value="pagebuilder" />
+                  <input type="hidden" name="area" value="newsletter_signup" />
+                  <input type="hidden" name="cmpt" value="newsletter_cc_newsletter_form" />
+                  <input type="hidden" name="cpid" value="1078" />-->
+                  <input type="text" name="email" placeholder="Email address" />
+                  <button class='rcorners' type='button'>
+                      <div class='button_tl'></div>
+                      <div class='tr'></div>
+                      <div class='bl'></div>
+                      <div class='br'></div>
+                      <div class='nbf_button'>
+                          <div class="palette10" 
+                          style="color:#FFFFFF; background-color:transparent;">Subscribe</div>
+                      </div>
+                      <script type="application/json" id="newsletter-form" 
+                      class="pb_data" data-type="newsletter">
+                      {
+                          "id":"newsletter-form",
+                          "inputvalidfailtext":"You must provide a value for $field",
+                          "emailvalidfailtext":"Please supply a valid email address.",
+                          "submitbaseurl":"https:\/\/www.offers.getaflight.co.uk",
+                          "trackevent":["Newsletter sign up","Submit","\/montego-bay\/",false]
+                      }</script>
+                  </button>
+
+              </div>
+              <div class="follow">
+                  <div class="chat">
+                      Follow us or chat on
+                  </div>
+                  <div class="socialicon">
+                      <div class="facebook">
+                          <a href="#">
+                              <img src="assests/facebook-f.svg">
+
+                          </a>
+
+                      </div>
+                      <div class="facebook">
+                          <a href="#">
+                              <img src="assests/instagram.svg">
+                          </a>
+
+                      </div>
+                      <div class="facebook">
+                          <a href="#">
+                              <img src="assests/whatsapp.svg">
+                          </a>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </div>
+      <div class="menufooter">
+          <div class="adjust">
+
+          <!--<div class="offers">
+              <div class="offer-menu">
+                  Flight Offers
+              </div>
+              <div class="footer-underline"></div>
+              <div class="menu-list">
+                  <a href="">first</a><br>
+                  <a href="">first</a><br>
+                  <a href="">first</a><br>
+                  <a href="">first</a><br>
+                  <a href="">first</a><br>
+                  <a href="">first</a>
+              </div>
+
+
+          </div>-->
+          <div class="support">
+            <div class="offer-menu">
+              Flight Deals
+            </div>
+            <div class="footer-underline"></div>
+            <div class="menu-list">
+              <a href="#">Menu 1</a><br>
+              <a href="#">Menu 1</a><br>
+              <a href="#">Menu 1</a><br>
+              <a href="#">Menu 1</a><br>
+              <a href="#">Menu 1</a>
+              
+                
+
+            
+            </div>
+
+
+        </div>
+          <div class="support">
+              <div class="offer-menu">
+                  Support
+              </div>
+              <div class="footer-underline"></div>
+              <div class="menu-list">
+                <a href="#">Menu 1</a><br>
+                <a href="#">Menu 1</a><br>
+                <a href="#">Menu 1</a><br>
+                <a href="#">Menu 1</a><br>
+                <a href="#">Menu 1</a>
+              
+              </div>
+
+
+          </div>
+          <div class="policies">
+              <div class="offer-menu">
+                  Policies
+              </div>
+              <div class="footer-underline"></div>
+              <div class="menu-list">
+                  <a href="#">Menu 1</a><br>
+                  <a href="#">Menu 1</a><br>
+                  <a href="#">Menu 1</a><br>
+                  <a href="#">Menu 1</a><br>
+                  <a href="#">Menu 1</a>
+                  
+              </div>
+
+
+          </div>
+          <div class="contact-us">
+              <div class="offer-menu">
+                  Flight Offers
+              </div>
+              <div class="footer-underline"></div>
+              <div class="menu-list">
+                  <div class="address">
+                      <span style="width: 60px; font-size: 15px;">
+                          Address:
+                      </span>
+                      <span style="color: #ff6c2d; font-size: 15px;"> xyz</span>
+
+                  </div>
+                  <div class="email" style="align-items: center;">
+                      <span style="width: 60px; font-size: 15px;">Email:</span>
+                      <a href="mailto:xyz@gmail.com" style="color: #ff6c2d; font-size: 15px; text-decoration: none;">xyz@gmail.com</a>
+
+
+
+                  </div>
+                  <div class="phone" style="align-items: center;">
+                      <span style="width: 60px; font-size: 15px;">
+                          Phone:
+                      </span>
+                      <a href="tel:000 0000 0000" style="color: #ff6c2d; font-size: 15px; text-decoration: none;">000 0000 0000</a>
+
+                  </div>
+                  <div class="address">
+                      <span style="width: 60px; font-size: 15px;">Timings:</span>
+                      <span style="color: #ff6c2d; font-size: 15px;">08:00 AM-11:00 PM</span>
+
+                  </div>
+              </div>
+
+
+          </div>
+          </div>
+
+
+      </div>
+      <div class="call-us">
+          <div class="adjust">
+              <div class="footer-logo">
+                  <a href="#">
+                      <img src="#">Logo
+                  </a>
+                  <div class="certified">
+                      <img src="#">
+                      <img src="#">
+                      <img src="#">
+
+
+                  </div>
+                  <div class="payment">
+                      <img src="assests/download (3).webp">
+                      <img src="assests/download (4).webp">
+                      <img src="assests/download (5).webp">
+
+
+                  </div>
+                  <div class="call-section">
+                      <img class="call-ico" src="assests/getaflight-phone-orange.svg">
+                      <div class="call-text">
+                          <div class="heading-call">
+                              Call Us
+                          </div>
+                          <div class="call-number">
+                              000 0000 0000
+                          </div>
+
+                      </div>
+
+
+                  </div>
+
+
+              </div>
+
+          </div>
+
+
+      </div>
+      <div class="copyright">
+          © Copyright ©2024 <strong>Your company</strong>, All Rights Reserved
+
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
